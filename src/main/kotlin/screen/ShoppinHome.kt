@@ -8,6 +8,7 @@ class ShoppinHome {
 
 
 
+
     }
 
     private fun extracted1() {
@@ -20,32 +21,13 @@ class ShoppinHome {
           감사합니다. 반가워요 $name 님
           원하시는 카테고리를 입력해주세요
           ***=================================
-       """.trimIndent()
+            """.trimIndent()
         )
     }
 
-    private fun extracted() {
-        val categories = arrayOf("패션", "전자기기", "반려동물용품")
-        for (category in categories) {
-            println(category)
-        }
-
-        println("=>장바구니로 이동하시려면 #을 입력해주세요")
-
-        var selectedCategory = readLine()
-
-        while (selectedCategory.isNullOrBlank()) {
-            println("값을 입력해주세요")
-            selectedCategory = readLine()
-        }
-        if (selectedCategory == "#") {
-            // TODO 1..장바구니 이동
-        } else {
-            //TODO 2..카테고리상품 목록 보여주기
-            // TDOD 3..카테고리 목록에 없는 값을 입력하는 경우
-        }
+    private fun extracted(){
+        val ShoppingCategory = ShoppingCategory()
+        ShoppingCategory.showcategories()
     }
-
-
 
 }
