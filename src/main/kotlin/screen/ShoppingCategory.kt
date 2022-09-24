@@ -21,7 +21,8 @@ class ShoppingCategory {
         } else {
 
             if(categories.contains(selectedCategory)){ //카테고리즈 안에 있는 내용을 입력햇을 경우
-                // TODO 2..카테고리상품 목록 보여주기
+                val ShoppingProductList = ShoppingProductList()
+                ShoppingProductList.showProducts(selectedCategory)
             }else{
 
                 ShowErrorMessage(selectedCategory)
