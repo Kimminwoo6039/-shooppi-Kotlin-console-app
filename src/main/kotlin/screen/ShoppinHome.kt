@@ -27,7 +27,7 @@ class ShoppinHome {
 
     private fun extracted(){
         val ShoppingCategory = ShoppingCategory()
-        ShoppingCategory.showcategories()
+        ShoppingCategory.showcategories() //ㄷ
     }
 
 }

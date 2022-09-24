@@ -32,7 +32,7 @@ class ShoppingCategory {
 
     private fun ShowErrorMessage(selectedCategory: String?) {
         println("[$selectedCategory] : 존재하지 않는 카테고리입니다. 다시입력해주세욧")
-        showcategories() // 다시 패션 전자기기 반려동물 용품 보여주세요
+        showcategories() // 다시 패션 전자기기 반려동물 용품 보여주세요1
     }
 
 
