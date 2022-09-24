@@ -2,7 +2,7 @@ package screen
 
 class ShoppingCategory {
 
-     fun showcategories() {
+    fun showcategories() {
         val categories = arrayOf("패션", "전자기기", "반려동물용품")
         for (category in categories) {
             println(category)

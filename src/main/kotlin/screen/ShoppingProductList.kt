@@ -15,7 +15,7 @@ class ShoppingProductList {
         Product(categoryLable = "반려동물용품", naem = "치약"),
         Product(categoryLable = "반려동물용품", naem = "간식"),
 
-    )
+        )
 
     private val categories: Map<String,List<Product>> = products.groupBy { product ->
         product.categoryLable
@@ -39,7 +39,7 @@ class ShoppingProductList {
 
         }else{
             println("[$selectedCategory] :카테고리 등록전입니다.")
-     
+
         }
 
 
