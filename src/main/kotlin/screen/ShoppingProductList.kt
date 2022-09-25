@@ -6,7 +6,7 @@ import data.Product // 임포트 시킴!
 import extensions.getNotEmptyInt
 import extensions.getNotEmptyString
 import screen.ShoppingCategory
-class ShoppingProductList : Screen() { // 관리
+class ShoppingProductList(private val selectedCategory: String) : Screen() { // 관리
 
     private val products = arrayOf(
         Product(categoryLable = "패션", naem = "겨울패딩") ,
@@ -27,7 +27,7 @@ class ShoppingProductList : Screen() { // 관리
     //카테고리즈라는 변수 선언 하고  Map < key, valyue > 값을 = 상품들중에 그륩별로 카테고리레이블로
 
 
-    fun showProducts(selectedCategory: String){
+    fun showProducts(){
         ScreenStack.push(this)
         val categoryProducts = categories[selectedCategory]
         if(!categoryProducts.isNullOrEmpty()){
@@ -41,7 +41,7 @@ class ShoppingProductList : Screen() { // 관리
                 println("${index}. ${categoryProducts[index].naem}")
             }*/
               categoryProducts.forEachIndexed { index, product ->  println("${index}. ${categoryProducts[index].naem}")}
-              showCartOption(categoryProducts,selectedCategory)
+              showCartOption(categoryProducts)
 
         }else{
             println("[$selectedCategory] :카테고리 등록전입니다..")
@@ -53,7 +53,7 @@ class ShoppingProductList : Screen() { // 관리
     }
 
 
-    private fun showCartOption(categoryProducts : List<Product>,selectedCategory: String){
+    private fun showCartOption(categoryProducts : List<Product>){
         println("""
             $LINE_DIVIDER
             장바구니에 담을 상품 번호를 선택해주세요
@@ -68,7 +68,7 @@ class ShoppingProductList : Screen() { // 관리
             if(selectedCategory.length < selectedIndex){ // 개수 !!
                 println("다시입력해주세요")
                 categoryProducts.forEachIndexed { index, product ->  println("${index}. ${categoryProducts[index].naem}")}
-                showCartOption(categoryProducts,selectedCategory)
+                showCartOption(categoryProducts)
             }
 
          // 내가만듬
@@ -81,11 +81,13 @@ class ShoppingProductList : Screen() { // 관리
                 val shoppingCart = ShoppingCart()
                 shoppingCart.showCartItems()
             }else if(answer=="*"){
-                showProducts(selectedCategory)
+                showProducts()
             }else{
                 //TODO 그 외 값을 입력한 값 처리
                 println("zzzz")
             }
+        } ?: kotlin.run {
+            println("$selectedIndex 번은 목록에 없는 상품 번호입니다.")
         }
 
 

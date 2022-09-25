@@ -29,8 +29,8 @@ class ShoppingCategory: Screen() {
         } else {
 
             if(categories.contains(selectedCategory)){ //카테고리즈 안에 있는 내용을 입력햇을 경우
-                val ShoppingProductList = ShoppingProductList()
-                ShoppingProductList.showProducts(selectedCategory)
+                val ShoppingProductList = ShoppingProductList(selectedCategory)
+                ShoppingProductList.showProducts()
             }else{
 
                 ShowErrorMessage(selectedCategory)
