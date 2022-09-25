@@ -60,7 +60,19 @@ class ShoppingProductList {
         """.trimIndent()
         )
 
+
+
+          // 내가만듬
+
         val selectedIndex = readLine().getNotEmptyInt()
+            if(selectedCategory.length < selectedIndex){ // 개수 !!
+                println("다시입력해주세요")
+                categoryProducts.forEachIndexed { index, product ->  println("${index}. ${categoryProducts[index].naem}")}
+                showCartOption(categoryProducts,selectedCategory)
+            }
+
+         // 내가만듬
+
         categoryProducts.getOrNull(selectedIndex)?.let { product ->
            CartItems.addProduct(product)
             println("=>장바구니로 이동하시려면 #을 ,계속하시려면 * 을 입력해주세요")
@@ -72,6 +84,7 @@ class ShoppingProductList {
                 showProducts(selectedCategory)
             }else{
                 //TODO 그 외 값을 입력한 값 처리
+                println("zzzz")
             }
         }
 
