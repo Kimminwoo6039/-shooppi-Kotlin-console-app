@@ -2,13 +2,12 @@ package screen
 
 class ShoppinHome {
 
+
+
+
     fun start(){
         extracted1()
         extracted()
-
-
-
-
     }
 
     private fun extracted1() {
