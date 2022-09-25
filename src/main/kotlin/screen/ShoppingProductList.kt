@@ -2,6 +2,8 @@ package screen
 
 import data.CartItems
 import data.Product // 임포트 시킴!
+import extensions.getNotEmptyInt
+import extensions.getNotEmptyString
 import screen.ShoppingCategory
 class ShoppingProductList {
 
@@ -57,11 +59,11 @@ class ShoppingProductList {
         """.trimIndent()
         )
 
-        val selectedIndex = readLine()?.toIntOrNull()!!
+        val selectedIndex = readLine().getNotEmptyInt()
         categoryProducts.getOrNull(selectedIndex)?.let { product ->
            CartItems.addProduct(product)
             println("=>장바구니로 이동하시려면 #을 ,계속하시려면 * 을 입력해주세요")
-            val answer = readLine()
+            val answer = readLine().getNotEmptyString()
             if(answer=="#"){
                 val shoppingCart = ShoppingCart()
                 shoppingCart.showCartItems()
