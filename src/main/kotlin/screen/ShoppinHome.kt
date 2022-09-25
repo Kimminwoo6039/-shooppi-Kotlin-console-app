@@ -3,7 +3,7 @@ package screen
 import LINE_DIVIDER
 import extensions.getNotEmptyString
 
-class ShoppinHome {
+class ShoppinHome:Screen() {
 
 
 
@@ -14,6 +14,7 @@ class ShoppinHome {
     }
 
     private fun extracted1() {
+        ScreenStack.push(this)
         println("안녕하세요,shoppi 에 오신걸 환영합니다 ~ ")
         println("쇼핑몰을 계속 하시려면 이름을 입력해주세요 :)")
 

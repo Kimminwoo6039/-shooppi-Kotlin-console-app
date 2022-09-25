@@ -3,14 +3,13 @@ package screen
 import extensions.getNotEmptyString
 
 /*
-   1.장바구니에 추가한 상품 관리
-   2.사용자 입력값 요청 처리 공통화
-   3.프로젝트 전역에서 참조하는 상수
-
+  1.화면 이동을 관리하는 stack
+  2.장바구니 이전화면 이동 구현
     */
-class ShoppingCategory {
+class ShoppingCategory: Screen() {
 
     fun showcategories() {
+        ScreenStack.push(this)
         val categories = arrayOf("패션", "전자기기", "반려동물용품")
         for (category in categories) {
             println(category)

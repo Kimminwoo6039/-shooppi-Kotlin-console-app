@@ -6,7 +6,7 @@ import data.Product // 임포트 시킴!
 import extensions.getNotEmptyInt
 import extensions.getNotEmptyString
 import screen.ShoppingCategory
-class ShoppingProductList {
+class ShoppingProductList : Screen() { // 관리
 
     private val products = arrayOf(
         Product(categoryLable = "패션", naem = "겨울패딩") ,
@@ -28,7 +28,7 @@ class ShoppingProductList {
 
 
     fun showProducts(selectedCategory: String){
-
+        ScreenStack.push(this)
         val categoryProducts = categories[selectedCategory]
         if(!categoryProducts.isNullOrEmpty()){
 
