@@ -41,7 +41,7 @@ class ShoppingProductList {
               showCartOption(categoryProducts,selectedCategory)
 
         }else{
-            println("[$selectedCategory] :카테고리 등록전입니다.")
+            println("[$selectedCategory] :카테고리 등록전입니다..")
 
         }
 
